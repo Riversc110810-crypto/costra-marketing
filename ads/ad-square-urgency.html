@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f0800;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    background: radial-gradient(ellipse at 50% 40%, #271200 0%, #0f0800 60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    position: relative;
+  }
+
+  .logo {
+    position: absolute;
+    top: 64px;
+    left: 72px;
+    font-size: 36px;
+    color: #f5f0e8;
+    letter-spacing: -1px;
+  }
+  .logo span { color: #f09320; }
+
+  /* ticking bills visual */
+  .bills-ticker {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .bill-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
+  }
+
+  .bill-name { color: rgba(245,240,232,0.55); }
+
+  .bill-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
+    margin: 0 20px;
+    overflow: hidden;
+  }
+
+  .bill-bar {
+    height: 100%;
+    background: #f09320;
+    border-radius: 3px;
+    opacity: 0.5;
+  }
+
+  .bill-amount { color: #f5f0e8; font-weight: 600; min-width: 80px; text-align: right; }
+  .bill-amount.renewing { color: #f09320; }
+
+  .bill-label {
+    font-size: 17px;
+    font-family: -apple-system, sans-serif;
+    color: rgba(240,147,32,0.7);
+    background: rgba(240,147,32,0.1);
+    border-radius: 6px;
+    padding: 3px 10px;
+    min-width: 110px;
+    text-align: center;
+  }
+
+  .divider {
+    width: 100%;
+    max-width: 760px;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 24px;
+  }
+
+  .total-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 760px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 56px;
+  }
+
+  .total-label { font-size: 22px; color: rgba(245,240,232,0.4); }
+  .total-amount { font-size: 52px; font-weight: 700; color: #f09320; }
+  .total-period { font-size: 20px; color: rgba(245,240,232,0.35); font-family: Georgia; }
+
+  h1 {
+    font-size: 80px;
+    line-height: 1.06;
+    color: #f5f0e8;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  h1 .accent { color: #f09320; }
+
+  .sub {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
+    color: rgba(245,240,232,0.55);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-bottom: 52px;
+  }
+
+  .cta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0f0800;
+    background: #f09320;
+    padding: 22px 56px;
+    border-radius: 100px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">costra<span>.</span></div>
+
+  <div class="bills-ticker">
+    <div class="bill-row">
+      <span class="bill-name">Adobe CC</span>
+      <div class="bill-bar-wrap"><div class="bill-bar" style="width:75%"></div></div>
+      <span class="bill-amount renewing">$54.99</span>
+      <span class="bill-label">renews in 3d</span>
+    </div>
+    <div class="bill-row">
+      <span class="bill-name">Gym membership</span>
+      <div class="bill-bar-wrap"><div class="bill-bar" style="width:40%"></div></div>
+      <span class="bill-amount">$49.00</span>
+      <span class="bill-label">renews in 8d</span>
+    </div>
+    <div class="bill-row">
+      <span class="bill-name">Hulu + Netflix</span>
+      <div class="bill-bar-wrap"><div class="bill-bar" style="width:90%"></div></div>
+      <span class="bill-amount renewing">$40.98</span>
+      <span class="bill-label">renews in 1d</span>
+    </div>
+    <div class="bill-row">
+      <span class="bill-name">Cloud storage (×2)</span>
+      <div class="bill-bar-wrap"><div class="bill-bar" style="width:55%"></div></div>
+      <span class="bill-amount">$19.98</span>
+      <span class="bill-label">renews in 6d</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="total-row">
+    <span class="total-label">Wasted this month</span>
+    <span><span class="total-amount">$164.95</span> <span class="total-period">/ mo</span></span>
+  </div>
+
+  <h1>Your bills don't wait.<br><span class="accent">Neither should you.</span></h1>
+
+  <p class="sub">Costra audits your spending before the next charge hits — so you can cancel, switch, or save first.</p>
+
+  <div class="cta">Join the waitlist →</div>
+</div>
+</body>
+</html>

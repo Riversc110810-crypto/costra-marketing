@@ -10,46 +10,93 @@
     color: #ccc;
     padding: 40px;
   }
-  h1 { color: #f09320; margin-bottom: 8px; }
-  p { color: #666; margin-bottom: 40px; font-size: 14px; }
-  .grid { display: flex; flex-direction: column; gap: 60px; }
-  .ad-item h2 { font-size: 16px; color: #999; margin-bottom: 12px; font-weight: 400; }
-  .ad-item .meta { font-size: 13px; color: #555; margin-bottom: 12px; }
+  h1 { color: #f09320; margin-bottom: 8px; font-size: 28px; }
+  .intro { color: #555; margin-bottom: 48px; font-size: 14px; }
+  h2 { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 6px; font-weight: 500; }
+  .meta { font-size: 13px; color: #444; margin-bottom: 14px; }
+  .grid { display: flex; flex-direction: column; gap: 72px; }
+  .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f09320;
+    margin-bottom: 4px;
+    opacity: 0.7;
+  }
   iframe {
-    border: 1px solid #333;
+    border: 1px solid #2a2a2a;
     border-radius: 8px;
     display: block;
   }
+  .row { display: flex; gap: 32px; flex-wrap: wrap; }
+  .ad-item { display: flex; flex-direction: column; }
 </style>
 </head>
 <body>
-<h1>costra. — Ad Previews</h1>
-<p>Open each ad file individually to screenshot at the correct resolution, or view them all here scaled down.</p>
+<h1>costra. — Ad Creative</h1>
+<p class="intro">Open each file individually for full-resolution export. Previews are scaled down here.</p>
 
 <div class="grid">
-  <div class="ad-item">
-    <h2>Ad 1 — Square (Instagram Feed) · Pain Point angle</h2>
-    <div class="meta">1080×1080 · "Your money is leaking. You just can't see it."</div>
-    <iframe src="ad-square-pain.html" width="540" height="540" style="transform-origin:top left;" scrolling="no"></iframe>
+
+  <div>
+    <div class="section-label">Square · 1080×1080 · Instagram / Meta Feed</div>
+    <div class="row">
+
+      <div class="ad-item">
+        <h2>Pain angle</h2>
+        <div class="meta">"You're probably paying for things you forgot about."</div>
+        <iframe src="ad-square-pain.html" width="400" height="400" scrolling="no"></iframe>
+      </div>
+
+      <div class="ad-item">
+        <h2>Outcome angle</h2>
+        <div class="meta">"Every wasted dollar, found." — bill breakdown visual</div>
+        <iframe src="ad-square-outcome.html" width="400" height="400" scrolling="no"></iframe>
+      </div>
+
+      <div class="ad-item">
+        <h2>Social proof angle</h2>
+        <div class="meta">"They had no idea how much they were wasting." — testimonials</div>
+        <iframe src="ad-square-social-proof.html" width="400" height="400" scrolling="no"></iframe>
+      </div>
+
+      <div class="ad-item">
+        <h2>Urgency angle</h2>
+        <div class="meta">"Your bills don't wait. Neither should you." — renewal countdown</div>
+        <iframe src="ad-square-urgency.html" width="400" height="400" scrolling="no"></iframe>
+      </div>
+
+      <div class="ad-item">
+        <h2>Comparison angle</h2>
+        <div class="meta">"Your spreadsheet can't do this." — vs. manual tracking table</div>
+        <iframe src="ad-square-comparison.html" width="400" height="400" scrolling="no"></iframe>
+      </div>
+
+    </div>
   </div>
 
-  <div class="ad-item">
-    <h2>Ad 2 — Square (Instagram Feed) · Outcome angle</h2>
-    <div class="meta">1080×1080 · "Know exactly where your money goes." with bill breakdown visual</div>
-    <iframe src="ad-square-outcome.html" width="540" height="540" scrolling="no"></iframe>
+  <div>
+    <div class="section-label">Story · 1080×1920 · Instagram / TikTok</div>
+    <div class="row">
+      <div class="ad-item">
+        <h2>Curiosity angle</h2>
+        <div class="meta">"When did you last audit your bills?" — itemized $147/mo reveal</div>
+        <iframe src="ad-story-curiosity.html" width="280" height="497" scrolling="no"></iframe>
+      </div>
+    </div>
   </div>
 
-  <div class="ad-item">
-    <h2>Ad 3 — Story (9:16) · Curiosity angle</h2>
-    <div class="meta">1080×1920 · "How much are you wasting each month?" with itemized reveal</div>
-    <iframe src="ad-story-curiosity.html" width="338" height="600" scrolling="no"></iframe>
+  <div>
+    <div class="section-label">Horizontal · 1200×628 · LinkedIn / OG / Display</div>
+    <div class="row">
+      <div class="ad-item">
+        <h2>Brand angle</h2>
+        <div class="meta">"Stop leaving money on the table." — phone mockup</div>
+        <iframe src="ad-banner-horizontal.html" width="600" height="314" scrolling="no"></iframe>
+      </div>
+    </div>
   </div>
 
-  <div class="ad-item">
-    <h2>Ad 4 — Horizontal Banner (OG / LinkedIn) · Brand angle</h2>
-    <div class="meta">1200×628 · "Stop leaving money on the table." with phone mock</div>
-    <iframe src="ad-banner-horizontal.html" width="600" height="314" scrolling="no"></iframe>
-  </div>
 </div>
 </body>
 </html>

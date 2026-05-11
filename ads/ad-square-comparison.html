@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f0800;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    background: radial-gradient(ellipse at 50% 50%, #231100 0%, #0f0800 65%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    position: relative;
+  }
+
+  .logo {
+    position: absolute;
+    top: 64px;
+    left: 72px;
+    font-size: 36px;
+    color: #f5f0e8;
+    letter-spacing: -1px;
+  }
+  .logo span { color: #f09320; }
+
+  h1 {
+    font-size: 84px;
+    line-height: 1.06;
+    color: #f5f0e8;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  h1 .accent { color: #f09320; }
+
+  /* comparison table */
+  .table {
+    width: 100%;
+    max-width: 860px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 52px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .table-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .table-head div {
+    padding: 22px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .col-feature { text-align: left !important; color: rgba(245,240,232,0.4); }
+  .col-old { color: rgba(245,240,232,0.35); }
+  .col-new { color: #f09320; }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .table-row:last-child { border-bottom: none; }
+
+  .table-row div {
+    padding: 20px 24px;
+    font-size: 22px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cell-feature {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    color: rgba(245,240,232,0.6);
+    font-size: 20px !important;
+  }
+
+  .cell-no { color: rgba(245,240,232,0.2); font-size: 28px !important; }
+  .cell-yes { color: #f09320; font-size: 24px !important; font-weight: 600; }
+  .cell-yes-green { color: #5ecc7a; font-size: 24px !important; font-weight: 600; }
+
+  .row-highlight { background: rgba(240,147,32,0.04); }
+
+  .sub {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 680px;
+    margin-bottom: 44px;
+  }
+
+  .cta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0f0800;
+    background: #f09320;
+    padding: 22px 56px;
+    border-radius: 100px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">costra<span>.</span></div>
+
+  <h1>Your spreadsheet<br>can't do <span class="accent">this.</span></h1>
+
+  <div class="table">
+    <div class="table-head">
+      <div class="col-feature"></div>
+      <div class="col-old">Manual tracking</div>
+      <div class="col-new">costra.</div>
+    </div>
+
+    <div class="table-row">
+      <div class="cell-feature">Catches duplicate charges</div>
+      <div class="cell-no">✕</div>
+      <div class="cell-yes">✓ Auto</div>
+    </div>
+    <div class="table-row row-highlight">
+      <div class="cell-feature">Finds cheaper alternatives</div>
+      <div class="cell-no">✕</div>
+      <div class="cell-yes">✓ Instant</div>
+    </div>
+    <div class="table-row">
+      <div class="cell-feature">Scans bills in seconds</div>
+      <div class="cell-no">✕</div>
+      <div class="cell-yes-green">✓ Upload &amp; done</div>
+    </div>
+    <div class="table-row row-highlight">
+      <div class="cell-feature">Zero manual data entry</div>
+      <div class="cell-no">✕</div>
+      <div class="cell-yes-green">✓ Always</div>
+    </div>
+    <div class="table-row">
+      <div class="cell-feature">Time to spot waste</div>
+      <div class="cell-no" style="font-size:18px !important; color:rgba(245,240,232,0.25)">Hours (if ever)</div>
+      <div class="cell-yes">Minutes</div>
+    </div>
+  </div>
+
+  <div class="cta">Join the waitlist →</div>
+</div>
+</body>
+</html>
