@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    background: #0f0800;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1200px;
+    height: 628px;
+    background: radial-gradient(ellipse at 30% 50%, #2a1500 0%, #0f0800 60%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 90px;
+    position: relative;
+    gap: 60px;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 30px;
+    color: #f5f0e8;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+  }
+  .logo span { color: #f09320; }
+
+  h1 {
+    font-size: 72px;
+    line-height: 1.05;
+    color: #f5f0e8;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  h1 .accent { color: #f09320; }
+
+  .sub {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 460px;
+  }
+
+  .cta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f0800;
+    background: #f09320;
+    padding: 16px 44px;
+    border-radius: 100px;
+    display: inline-block;
+  }
+
+  /* right side: mock phone screen */
+  .phone-wrap {
+    position: relative;
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phone {
+    width: 240px;
+    height: 460px;
+    background: #1c0e00;
+    border-radius: 36px;
+    border: 2px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px 20px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phone-notch {
+    width: 80px;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .phone-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: rgba(245,240,232,0.4);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .scan-area {
+    width: 100%;
+    flex: 1;
+    background: rgba(240,147,32,0.06);
+    border: 1.5px dashed rgba(240,147,32,0.35);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .scan-icon {
+    font-size: 40px;
+  }
+
+  .scan-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: rgba(240,147,32,0.7);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .result-bar {
+    width: 100%;
+    background: rgba(94,204,122,0.12);
+    border: 1px solid rgba(94,204,122,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .result-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: rgba(245,240,232,0.5);
+  }
+
+  .result-value {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #5ecc7a;
+  }
+
+  /* glow behind phone */
+  .phone-wrap::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(240,147,32,0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="left">
+    <div class="logo">costra<span>.</span></div>
+    <h1>Stop leaving<br>money on<br><span class="accent">the table.</span></h1>
+    <p class="sub">Upload your bills. Costra finds wasted spending, duplicates, and cheaper alternatives — in minutes.</p>
+    <div class="cta">Join the waitlist →</div>
+  </div>
+
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-label">Scan your bill</div>
+      <div class="scan-area">
+        <div class="scan-icon">📄</div>
+        <div class="scan-text">Drop your bank<br>statement here</div>
+      </div>
+      <div class="result-bar">
+        <span class="result-label">Savings found</span>
+        <span class="result-value">$131 / mo</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

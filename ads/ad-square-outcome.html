@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f0800;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    background: radial-gradient(ellipse at 40% 60%, #2a1500 0%, #0f0800 65%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 80px;
+    position: relative;
+  }
+
+  .logo {
+    position: absolute;
+    top: 64px;
+    left: 80px;
+    font-size: 36px;
+    color: #f5f0e8;
+    letter-spacing: -1px;
+  }
+  .logo span { color: #f09320; }
+
+  /* receipt stack visual */
+  .receipt-stack {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    opacity: 0.9;
+  }
+
+  .receipt {
+    width: 280px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .receipt-label { color: rgba(245,240,232,0.5); }
+  .receipt-amount { color: #f5f0e8; font-weight: 600; }
+  .receipt-amount.wasted { color: #f09320; text-decoration: line-through; opacity: 0.7; }
+  .receipt-amount.saved { color: #5ecc7a; }
+
+  .receipt-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 10px 0;
+  }
+
+  .receipt-tag {
+    font-size: 15px;
+    font-family: -apple-system, sans-serif;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .receipt-tag.dup { background: rgba(240,147,32,0.2); color: #f09320; }
+  .receipt-tag.cheap { background: rgba(94,204,122,0.15); color: #5ecc7a; }
+
+  .content { max-width: 560px; }
+
+  .eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: #f09320;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: 82px;
+    line-height: 1.06;
+    color: #f5f0e8;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  h1 .accent { color: #f09320; }
+
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
+    color: rgba(245,240,232,0.58);
+    line-height: 1.5;
+    margin-bottom: 52px;
+    max-width: 480px;
+  }
+
+  .cta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #0f0800;
+    background: #f09320;
+    padding: 20px 50px;
+    border-radius: 100px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">costra<span>.</span></div>
+
+  <div class="content">
+    <div class="eyebrow">Finally see it clearly</div>
+
+    <h1>Know exactly<br>where your<br>money <span class="accent">goes.</span></h1>
+
+    <p>Snap your bills. Costra finds duplicate charges, wasted subscriptions, and cheaper alternatives — automatically.</p>
+
+    <div class="cta">Join the waitlist →</div>
+  </div>
+
+  <div class="receipt-stack">
+    <div class="receipt">
+      <div class="receipt-row">
+        <span class="receipt-label">Netflix</span>
+        <span class="receipt-amount wasted">$22.99</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Hulu</span>
+        <span class="receipt-amount wasted">$17.99</span>
+      </div>
+      <div class="receipt-divider"></div>
+      <span class="receipt-tag dup">duplicate streaming</span>
+    </div>
+
+    <div class="receipt">
+      <div class="receipt-row">
+        <span class="receipt-label">Adobe CC</span>
+        <span class="receipt-amount wasted">$54.99</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Cheaper alt.</span>
+        <span class="receipt-amount saved">$12.99</span>
+      </div>
+      <div class="receipt-divider"></div>
+      <span class="receipt-tag cheap">save $42/mo</span>
+    </div>
+
+    <div class="receipt">
+      <div class="receipt-row">
+        <span class="receipt-label">Gym (unused)</span>
+        <span class="receipt-amount wasted">$49.00</span>
+      </div>
+      <div class="receipt-divider"></div>
+      <span class="receipt-tag dup">cancel & save</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

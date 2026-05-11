@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Costra Ad Previews</title>
+<style>
+  body {
+    background: #111;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #ccc;
+    padding: 40px;
+  }
+  h1 { color: #f09320; margin-bottom: 8px; }
+  p { color: #666; margin-bottom: 40px; font-size: 14px; }
+  .grid { display: flex; flex-direction: column; gap: 60px; }
+  .ad-item h2 { font-size: 16px; color: #999; margin-bottom: 12px; font-weight: 400; }
+  .ad-item .meta { font-size: 13px; color: #555; margin-bottom: 12px; }
+  iframe {
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+<h1>costra. — Ad Previews</h1>
+<p>Open each ad file individually to screenshot at the correct resolution, or view them all here scaled down.</p>
+
+<div class="grid">
+  <div class="ad-item">
+    <h2>Ad 1 — Square (Instagram Feed) · Pain Point angle</h2>
+    <div class="meta">1080×1080 · "Your money is leaking. You just can't see it."</div>
+    <iframe src="ad-square-pain.html" width="540" height="540" style="transform-origin:top left;" scrolling="no"></iframe>
+  </div>
+
+  <div class="ad-item">
+    <h2>Ad 2 — Square (Instagram Feed) · Outcome angle</h2>
+    <div class="meta">1080×1080 · "Know exactly where your money goes." with bill breakdown visual</div>
+    <iframe src="ad-square-outcome.html" width="540" height="540" scrolling="no"></iframe>
+  </div>
+
+  <div class="ad-item">
+    <h2>Ad 3 — Story (9:16) · Curiosity angle</h2>
+    <div class="meta">1080×1920 · "How much are you wasting each month?" with itemized reveal</div>
+    <iframe src="ad-story-curiosity.html" width="338" height="600" scrolling="no"></iframe>
+  </div>
+
+  <div class="ad-item">
+    <h2>Ad 4 — Horizontal Banner (OG / LinkedIn) · Brand angle</h2>
+    <div class="meta">1200×628 · "Stop leaving money on the table." with phone mock</div>
+    <iframe src="ad-banner-horizontal.html" width="600" height="314" scrolling="no"></iframe>
+  </div>
+</div>
+</body>
+</html>

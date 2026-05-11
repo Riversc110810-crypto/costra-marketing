@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #0f0800;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1920px;
+    background:
+      radial-gradient(ellipse at 50% 30%, #2e1600 0%, #0f0800 55%),
+      radial-gradient(ellipse at 50% 85%, #1a0c00 0%, #0f0800 60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 80px 120px;
+    position: relative;
+  }
+
+  /* subtle dot grid */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 42px;
+    color: #f5f0e8;
+    letter-spacing: -1px;
+    margin-bottom: 60px;
+  }
+  .logo span { color: #f09320; }
+
+  .question-block {
+    margin-bottom: 56px;
+  }
+
+  .q-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: rgba(240, 147, 32, 0.8);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .question {
+    font-size: 88px;
+    line-height: 1.05;
+    color: #f5f0e8;
+    font-weight: 700;
+  }
+
+  .question .accent { color: #f09320; }
+
+  /* bill list */
+  .bill-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+
+  .bill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 30px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .bill-name {
+    font-size: 30px;
+    color: rgba(245,240,232,0.7);
+  }
+
+  .bill-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .bill-amount {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f5f0e8;
+  }
+
+  .bill-badge {
+    font-size: 20px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .badge-waste { background: rgba(240,147,32,0.18); color: #f09320; }
+  .badge-dup   { background: rgba(220,60,60,0.15);  color: #e06060; }
+  .badge-ok    { background: rgba(94,204,122,0.12); color: #5ecc7a; }
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+  }
+
+  .reveal-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
+    color: rgba(245,240,232,0.4);
+    text-align: center;
+    margin-bottom: 28px;
+    margin-top: 60px;
+  }
+
+  .total-saved {
+    font-size: 110px;
+    font-weight: 700;
+    color: #f09320;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .total-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 28px;
+    color: rgba(245,240,232,0.5);
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 28px;
+  }
+
+  .body-copy {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 30px;
+    color: rgba(245,240,232,0.6);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 780px;
+  }
+
+  .cta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #0f0800;
+    background: #f09320;
+    padding: 26px 72px;
+    border-radius: 100px;
+  }
+
+  .proof {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: rgba(245,240,232,0.3);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="top">
+    <div class="logo">costra<span>.</span></div>
+
+    <div class="question-block">
+      <div class="q-label">The real question is</div>
+      <div class="question">How much are<br>you <span class="accent">wasting</span><br>each month?</div>
+    </div>
+
+    <div class="bill-list">
+      <div class="bill-item">
+        <span class="bill-name">Spotify</span>
+        <div class="bill-right">
+          <span class="bill-amount">$10.99</span>
+          <span class="bill-badge badge-ok">keeping</span>
+        </div>
+      </div>
+      <div class="bill-item">
+        <span class="bill-name">Adobe CC</span>
+        <div class="bill-right">
+          <span class="bill-amount">$54.99</span>
+          <span class="bill-badge badge-waste">$42 wasted</span>
+        </div>
+      </div>
+      <div class="bill-item">
+        <span class="bill-name">Gym membership</span>
+        <div class="bill-right">
+          <span class="bill-amount">$49.00</span>
+          <span class="bill-badge badge-waste">unused</span>
+        </div>
+      </div>
+      <div class="bill-item">
+        <span class="bill-name">Netflix + Hulu</span>
+        <div class="bill-right">
+          <span class="bill-amount">$40.98</span>
+          <span class="bill-badge badge-dup">duplicate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="middle">
+    <div class="reveal-label">Costra found you could save</div>
+    <div class="total-saved">$131/mo</div>
+    <div class="total-label">in wasted spending</div>
+  </div>
+
+  <div class="bottom">
+    <p class="body-copy">
+      Upload your bills and bank statements.<br>
+      Costra spots what you're wasting — in minutes.
+    </p>
+    <div class="cta">Join the waitlist →</div>
+    <div class="proof">82+ people already on the waitlist</div>
+  </div>
+
+</div>
+</body>
+</html>

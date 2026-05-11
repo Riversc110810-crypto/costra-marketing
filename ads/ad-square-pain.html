@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f0800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    background: radial-gradient(ellipse at 60% 40%, #2a1500 0%, #0f0800 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    position: relative;
+  }
+
+  /* subtle grid texture */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 64px;
+    left: 72px;
+    font-size: 36px;
+    color: #f5f0e8;
+    letter-spacing: -1px;
+    font-family: Georgia, serif;
+  }
+
+  .logo span { color: #f09320; }
+
+  .tag {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: #f09320;
+    background: rgba(240, 147, 32, 0.12);
+    border: 1px solid rgba(240, 147, 32, 0.3);
+    padding: 10px 24px;
+    border-radius: 100px;
+    margin-bottom: 52px;
+    letter-spacing: 0.02em;
+  }
+
+  .headline {
+    font-size: 96px;
+    line-height: 1.05;
+    color: #f5f0e8;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 36px;
+  }
+
+  .headline .accent { color: #f09320; }
+
+  .subtext {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 28px;
+    color: rgba(245, 240, 232, 0.6);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 680px;
+    margin-bottom: 64px;
+  }
+
+  .cta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0f0800;
+    background: #f09320;
+    padding: 22px 56px;
+    border-radius: 100px;
+    letter-spacing: 0.01em;
+  }
+
+  .social-proof {
+    position: absolute;
+    bottom: 64px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 22px;
+    color: rgba(245, 240, 232, 0.4);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">costra<span>.</span></div>
+
+  <div class="tag">• AI-powered savings concierge</div>
+
+  <h1 class="headline">
+    Your money is<br>leaking.<br>
+    <span class="accent">You just can't see it.</span>
+  </h1>
+
+  <p class="subtext">
+    Upload your bills and bank statements.<br>
+    Costra finds what you're wasting — in minutes.
+  </p>
+
+  <div class="cta">Join the waitlist →</div>
+
+  <div class="social-proof">82+ people already on the waitlist</div>
+</div>
+</body>
+</html>
